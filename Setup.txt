@@ -1,0 +1,83 @@
+sudo apt-get install python3-pip
+
+sudo apt-get install pip
+
+pip3 install matplotlib
+
+pip3 install --upgrade pip
+
+http://torch.ch/docs/getting-started.html#
+
+git clone https://github.com/torch/distro.git ~/torch --recursive
+cd ~/torch; bash install-deps;
+./install.sh
+
+source ~/.bashrc
+
+pip --version
+python --version
+
+uname -a
+
+pip list --user
+
+https://dwijaybane.wordpress.com/2017/07/22/installing-torch-7-deep-learning-on-ubuntu-16-04/
+
+
+fixed problem:
+Error: Could not find header file for LMDB
+  No file lmdb.h in /usr/local/include
+
+luarocks install lightningmdb 0.9.18.1-1 LMDB_INCDIR=/usr/include LMDB_LIBDIR=/usr/lib/x86_64-linux-gnu
+
+fixed problem:
+Missing dependencies for nccl: cutorch
+
+update torch first:
+luarocks install torch
+luarocks install cutorch
+
+fixed problem in install cutorch:
+CMake Error at /usr/share/cmake-3.5/Modules/FindCUDA.cmake:617 (message):   Specify CUDA_TOOLKIT_ROOT_DIR
+
+https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&target_distro=Ubuntu&target_version=1604&target_type=deblocal
+
+`sudo dpkg -i cuda-repo-ubuntu1604-9-1-local_9.1.85-1_amd64.deb`
+`sudo apt-key add /var/cuda-repo-<version>/7fa2af80.pub`
+`sudo apt-get update`
+`sudo apt-get install cuda`
+
+https://devtalk.nvidia.com/default/topic/1000340/-quot-nvidia-smi-has-failed-because-it-couldn-t-communicate-with-the-nvidia-driver-quot-ubuntu-16-04/?offset=42
+
+sudo apt-get purge nvidia*
+sudo add-apt-repository ppa:graphics-drivers
+sudo apt-get update
+sudo apt-get install nvidia-390
+
+http://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#ubuntu-installation
+
+fixed problem im ./install.sh -b:
+/THCTensorMathPairwise.cu(66): error: more than one operator "!=" matches these operands
+
+TORCH_NVCC_FLAGS="-D__CUDA_NO_HALF_OPERATORS__" ./install.sh
+
+
+pip3 install torch torchvision
+
+pip3 install pydot3 
+
+Modofied setup.py under digits/
+
+# execfile(os.path.join(LOCAL_DIR, 'digits', 'version.py'), {}, version_locals)
+exec(compile(open(os.path.join(LOCAL_DIR, 'digits', 'version.py'), "rb").read(), os.path.join(LOCAL_DIR, 'digits', 'version.py'), 'exec'), {}, version_locals)
+
+https://github.com/jed-frey/DIGITS/tree/v5.1-dev-py3
+
+http://codrspace.com/sdadia/install-caffe-with-python-3-opencv-3-support-Debian-Ubuntu/
+
+Installing opencv 3.4
+sudo pip3 install opencv-contrib-python
+
+Install openVC 3.3
+https://medium.com/@debugvn/installing-opencv-3-3-0-on-ubuntu-16-04-lts-7db376f93961
+
