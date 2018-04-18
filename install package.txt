@@ -4,3 +4,6 @@ sudo apt-get install pip
 
 pip3 install matplotlib
 
+Install gym package:
+sudo pip3 install -U gym
+
