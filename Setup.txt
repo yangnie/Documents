@@ -60,11 +60,16 @@ fixed problem im ./install.sh -b:
 /THCTensorMathPairwise.cu(66): error: more than one operator "!=" matches these operands
 
 TORCH_NVCC_FLAGS="-D__CUDA_NO_HALF_OPERATORS__" ./install.sh
+------------------------------------------------------------------------
+sudo pip install -U matplotlib
 
+sudo apt-get install python3-tk
 
-pip3 install torch torchvision
+sudo pip install Pillow
 
-pip3 install pydot3 
+sudo pip3 install torch torchvision
+
+sudo pip3 install pydot3 
 
 Modofied setup.py under digits/
 
