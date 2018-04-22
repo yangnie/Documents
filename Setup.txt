@@ -4,6 +4,10 @@ sudo apt-get install pip
 
 pip3 install matplotlib
 
+sudo apt-get install python3-matplotlib
+
+sudo apt remove python-pip
+
 pip3 install --upgrade pip
 
 http://torch.ch/docs/getting-started.html#
@@ -62,6 +66,8 @@ fixed problem im ./install.sh -b:
 TORCH_NVCC_FLAGS="-D__CUDA_NO_HALF_OPERATORS__" ./install.sh
 ------------------------------------------------------------------------
 sudo pip install -U matplotlib
+
+sudo apt-get install python3-launchpadlib
 
 sudo apt-get install python3-tk
 
