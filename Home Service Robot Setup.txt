@@ -1,0 +1,55 @@
+
+mkdir catkin_ws
+cd catkin_ws
+
+sudo apt-get update
+sudo apt-get install ros-kinetic-navigation
+
+mkdir src
+cd src
+
+git clone  https://github.com/ros-perception/slam_gmapping.git
+git clone https://github.com/turtlebot/turtlebot.git
+git clone https://github.com/turtlebot/turtlebot_interactions.git
+git clone https://github.com/turtlebot/turtlebot_simulator.git
+
+mkdir World
+mkdir ShellScripts
+mkdir RvizConfig
+mkdir wall_follower
+mkdir pick_objects
+mkdir add_markers
+
+sudo apt install python-rosdep
+sudo rosdep init
+rosdep update
+
+sudo apt-get install xterm
+
+sudo apt install python-roslaunch
+sudo apt install rosbash
+
+catkin_make
+
+sudo apt install rospack-tools
+
+http://wiki.ros.org/kinetic/Installation/Ubuntu
+
+sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
+
+sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-key 421C365BD9FF1F717815A3895523BAEEB01FA116
+
+sudo apt-get update
+
+sudo apt-get install ros-kinetic-desktop-full
+
+source /opt/ros/kinetic/setup.bash
+catkin_make
+
+apt-get install ros-kinetic-joy*
+catkin_make
+
+
+
+
+
