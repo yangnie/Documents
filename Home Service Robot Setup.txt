@@ -46,9 +46,12 @@ sudo apt-get install ros-kinetic-desktop-full
 source /opt/ros/kinetic/setup.bash
 catkin_make
 
-apt-get install ros-kinetic-joy*
+sudo apt-get install ros-kinetic-joy*
 catkin_make
 
+sudo apt-get install ros-kinetic-turtlebot-gazebo
+source /opt/ros/kinetic/setup.bash
+roslaunch  ./src/launch/turtlebot_world.launch
 
 
 
