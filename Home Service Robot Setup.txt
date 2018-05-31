@@ -13,9 +13,9 @@ git clone https://github.com/turtlebot/turtlebot.git
 git clone https://github.com/turtlebot/turtlebot_interactions.git
 git clone https://github.com/turtlebot/turtlebot_simulator.git
 
-mkdir World
-mkdir ShellScripts
-mkdir RvizConfig
+mkdir world
+mkdir shellscripts
+mkdir rvizConfig
 mkdir wall_follower
 mkdir pick_objects
 mkdir add_markers
@@ -28,6 +28,9 @@ sudo apt-get install xterm
 
 sudo apt install python-roslaunch
 sudo apt install rosbash
+
+cd ~/catkin_ws/src
+catkin_create_pkg homeservice std_msgs rospy roscpp
 
 catkin_make
 
@@ -53,6 +56,56 @@ sudo apt-get install ros-kinetic-turtlebot-gazebo
 source /opt/ros/kinetic/setup.bash
 roslaunch  ./src/launch/turtlebot_world.launch
 
+cd ~/catkin_ws/src
+catkin_create_pkg wall_follower std_msgs roscpp
 
 
+Modified CMakeLists.txt under ~/catkin_ws/src/wall_follower
+
+Modified wall_follower.cpp file under ~/catkin_ws/src/wall_follower/src
+
+cd ~/catkin_ws
+catkin_make
+
+save map file
+cd ~/catkin_ws/src/homeservice/maps
+rosrun map_server map_saver -f homeservice
+
+Set robot initial position
+export ROBOT_INITIAL_POSE="-x -4.6 -y 0.3 -z 0.0 -R 0.0  -P 0.0 -Y 0.0"
+
+catkin_create_pkg pick_objects std_msgs roscpp move_base_msgs actionlib under ~/catkin_ws/src
+
+cd ~/catkin_ws/src
+catkin_create_pkg add_markers visualization_msgs roscpp
+
+How to edit aCMakeList.txt file: http://wiki.ros.org/catkin/CMakeLists.txt
+
+Dubug command
+==================================
+rosrun rqt_graph rqt_graph
+
+rosnode list
+
+rosnode info <node name>
+
+rostopic list
+
+rostopic list -p
+
+rostopic list -s
+
+rostopic echo <topic name>
+
+rostopic info <topic name>
+
+rospack list
+
+Utility
+============================
+$ sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu `lsb_release -sc` main" > /etc/apt/sources.list.d/ros-latest.list'
+$ wget http://packages.ros.org/ros.key -O - | sudo apt-key add -
+
+$ sudo apt-get update
+$ sudo apt-get install python-catkin-tools
 
