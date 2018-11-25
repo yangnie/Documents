@@ -35,5 +35,6 @@ make_tar_file(dir_name, tar_file_name, ignore)
 Save cvs data file from dataframe command:
 ==========================================
 file_name='eod-quotemedia.csv'
-df.to_csv(file_name, sep='\t', encoding='utf-8')
+df.to_csv(file_name, index=False)
+print('finished')
 ==========================================
