@@ -38,3 +38,10 @@ file_name='eod-quotemedia.csv'
 df.to_csv(file_name, index=False)
 print('finished')
 ==========================================
+
+5. Modified the first command to load all lib files
+===================================================
+import sys
+!{sys.executable} -m pip install --user -r requirements.txt
+===================================================
+
