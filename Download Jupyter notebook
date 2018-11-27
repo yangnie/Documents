@@ -39,6 +39,28 @@ df.to_csv(file_name, index=False)
 print('finished')
 ==========================================
 
+Utilities:
+List all file in current dir
+============================================
+import os
+
+for root, dirs, files in os.walk("."):  
+    for filename in files:
+        print(root, filename)
+============================================
+Read and write a csv file
+============================================
+import pandas as pd
+path = './.Trash-0/files/'
+file_name='profiles_20170918.csv'
+df = pd.read_csv(path + file_name, index_col=False)
+print(df)
+df.to_csv(file_name, index=False)
+print('finished')
+============================================
+
+==========================================
+
 5. Modified the first command to load all lib files
 ===================================================
 import sys
