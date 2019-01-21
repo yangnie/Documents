@@ -87,7 +87,7 @@ import sys
 ===================================================
 
 6. Problem: FeatureNotFound: Couldn't find a tree builder with the features you requested: xml. Do you need to install a parser library?
-Fixed: !{sys.executable} -m pip install --user lxml
+Fixed: Create a new cell in jupyter notebook; add this command and run this cell: !{sys.executable} -m pip install --user lxml
 used these command to test lib:
 #import bs4.builder.htmlparser
 #import bs4.builder._lxml
