@@ -86,3 +86,5 @@ import sys
 !{sys.executable} -m pip install --user -r requirements.txt
 ===================================================
 
+6. Problem: FeatureNotFound: Couldn't find a tree builder with the features you requested: xml. Do you need to install a parser library?
+Fixed: python3 -m pip install lxml
