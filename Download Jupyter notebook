@@ -32,9 +32,11 @@ make_tar_file(dir_name, tar_file_name, ignore)
 3. Run this cell
 4. Goto Jupyter notebook file page to find this tar file
 
-Save cvs data file from dataframe command:
-==========================================
-file_name='eod-quotemedia.csv'
+Load original cvs file and save all data to a local file from dataframe command:
+Note: have to remove the option likes parse_dates=['date'] from read_cvs command
+================================================================================
+df  = pd.read_csv('../../data/project_5_yr/yr-quotemedia.csv')
+file_name='yr-quotemedia.csv'
 df.to_csv(file_name, index=False)
 print('finished')
 
@@ -94,3 +96,7 @@ used these command to test lib:
 #import bs4.builder._html5lib
 import lxml
 
+How to start jupyter notebook from Ubuntu terminal
+==================================================
+Change directory to jupyter notebook file located dir
+Type command: jupyter notebook 
