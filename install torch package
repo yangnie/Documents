@@ -4,5 +4,5 @@ If Command 'nvcc' not found, but can be installed with:
 sudo apt install nvidia-cuda-toolkit
 
 2. Use this URL: https://pytorch.org/ to find install torch command
-pip3 install torch torchvision
+pip3 install --user torch torchvision
 
