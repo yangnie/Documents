@@ -100,3 +100,139 @@ How to start jupyter notebook from Ubuntu terminal
 ==================================================
 Change directory to jupyter notebook file located dir
 Type command: jupyter notebook 
+
+
+Download the data package from a directory
+==========================================
+1. Change current directory and display all data files
+import os
+print(os.environ['ZIPLINE_ROOT'])
+os.chdir(os.environ['ZIPLINE_ROOT'])
+for root, dirs, files in os.walk("."):  
+    for filename in files:
+        print(root, filename)
+        
+/home/workspace/../../data/project_7_eod
+./data/eod-quotemedia/2019-01-22T22;15;53.169516 adjustments.sqlite
+./data/eod-quotemedia/2019-01-22T22;15;53.169516 assets-6.sqlite
+./data/eod-quotemedia/2019-01-22T22;15;53.169516/minute_equities.bcolz metadata.json
+./data/eod-quotemedia/2019-01-22T22;15;53.169516/daily_equities.bcolz __attrs__
+./data/eod-quotemedia/2019-01-22T22;15;53.169516/daily_equities.bcolz __rootdirs__
+./data/eod-quotemedia/2019-01-22T22;15;53.169516/daily_equities.bcolz/low __attrs__
+./data/eod-quotemedia/2019-01-22T22;15;53.169516/daily_equities.bcolz/low/data __7.blp
+./data/eod-quotemedia/2019-01-22T22;15;53.169516/daily_equities.bcolz/low/data __1.blp
+./data/eod-quotemedia/2019-01-22T22;15;53.169516/daily_equities.bcolz/low/data __8.blp
+./data/eod-quotemedia/2019-01-22T22;15;53.169516/daily_equities.bcolz/low/data __5.blp
+./data/eod-quotemedia/2019-01-22T22;15;53.169516/daily_equities.bcolz/low/data __3.blp
+./data/eod-quotemedia/2019-01-22T22;15;53.169516/daily_equities.bcolz/low/data __2.blp
+./data/eod-quotemedia/2019-01-22T22;15;53.169516/daily_equities.bcolz/low/data __4.blp
+./data/eod-quotemedia/2019-01-22T22;15;53.169516/daily_equities.bcolz/low/data __9.blp
+./data/eod-quotemedia/2019-01-22T22;15;53.169516/daily_equities.bcolz/low/data __6.blp
+./data/eod-quotemedia/2019-01-22T22;15;53.169516/daily_equities.bcolz/low/data __0.blp
+./data/eod-quotemedia/2019-01-22T22;15;53.169516/daily_equities.bcolz/low/meta sizes
+./data/eod-quotemedia/2019-01-22T22;15;53.169516/daily_equities.bcolz/low/meta storage
+./data/eod-quotemedia/2019-01-22T22;15;53.169516/daily_equities.bcolz/close __attrs__
+./data/eod-quotemedia/2019-01-22T22;15;53.169516/daily_equities.bcolz/close/data __7.blp
+./data/eod-quotemedia/2019-01-22T22;15;53.169516/daily_equities.bcolz/close/data __1.blp
+./data/eod-quotemedia/2019-01-22T22;15;53.169516/daily_equities.bcolz/close/data __8.blp
+./data/eod-quotemedia/2019-01-22T22;15;53.169516/daily_equities.bcolz/close/data __5.blp
+./data/eod-quotemedia/2019-01-22T22;15;53.169516/daily_equities.bcolz/close/data __3.blp
+./data/eod-quotemedia/2019-01-22T22;15;53.169516/daily_equities.bcolz/close/data __2.blp
+./data/eod-quotemedia/2019-01-22T22;15;53.169516/daily_equities.bcolz/close/data __4.blp
+./data/eod-quotemedia/2019-01-22T22;15;53.169516/daily_equities.bcolz/close/data __9.blp
+./data/eod-quotemedia/2019-01-22T22;15;53.169516/daily_equities.bcolz/close/data __6.blp
+./data/eod-quotemedia/2019-01-22T22;15;53.169516/daily_equities.bcolz/close/data __0.blp
+./data/eod-quotemedia/2019-01-22T22;15;53.169516/daily_equities.bcolz/close/meta sizes
+./data/eod-quotemedia/2019-01-22T22;15;53.169516/daily_equities.bcolz/close/meta storage
+./data/eod-quotemedia/2019-01-22T22;15;53.169516/daily_equities.bcolz/open __attrs__
+./data/eod-quotemedia/2019-01-22T22;15;53.169516/daily_equities.bcolz/open/data __7.blp
+./data/eod-quotemedia/2019-01-22T22;15;53.169516/daily_equities.bcolz/open/data __1.blp
+./data/eod-quotemedia/2019-01-22T22;15;53.169516/daily_equities.bcolz/open/data __8.blp
+./data/eod-quotemedia/2019-01-22T22;15;53.169516/daily_equities.bcolz/open/data __5.blp
+./data/eod-quotemedia/2019-01-22T22;15;53.169516/daily_equities.bcolz/open/data __3.blp
+./data/eod-quotemedia/2019-01-22T22;15;53.169516/daily_equities.bcolz/open/data __2.blp
+./data/eod-quotemedia/2019-01-22T22;15;53.169516/daily_equities.bcolz/open/data __4.blp
+./data/eod-quotemedia/2019-01-22T22;15;53.169516/daily_equities.bcolz/open/data __9.blp
+./data/eod-quotemedia/2019-01-22T22;15;53.169516/daily_equities.bcolz/open/data __6.blp
+./data/eod-quotemedia/2019-01-22T22;15;53.169516/daily_equities.bcolz/open/data __0.blp
+./data/eod-quotemedia/2019-01-22T22;15;53.169516/daily_equities.bcolz/open/meta sizes
+./data/eod-quotemedia/2019-01-22T22;15;53.169516/daily_equities.bcolz/open/meta storage
+./data/eod-quotemedia/2019-01-22T22;15;53.169516/daily_equities.bcolz/id __attrs__
+./data/eod-quotemedia/2019-01-22T22;15;53.169516/daily_equities.bcolz/id/data __7.blp
+./data/eod-quotemedia/2019-01-22T22;15;53.169516/daily_equities.bcolz/id/data __1.blp
+./data/eod-quotemedia/2019-01-22T22;15;53.169516/daily_equities.bcolz/id/data __8.blp
+./data/eod-quotemedia/2019-01-22T22;15;53.169516/daily_equities.bcolz/id/data __5.blp
+./data/eod-quotemedia/2019-01-22T22;15;53.169516/daily_equities.bcolz/id/data __3.blp
+./data/eod-quotemedia/2019-01-22T22;15;53.169516/daily_equities.bcolz/id/data __2.blp
+./data/eod-quotemedia/2019-01-22T22;15;53.169516/daily_equities.bcolz/id/data __4.blp
+./data/eod-quotemedia/2019-01-22T22;15;53.169516/daily_equities.bcolz/id/data __9.blp
+./data/eod-quotemedia/2019-01-22T22;15;53.169516/daily_equities.bcolz/id/data __6.blp
+./data/eod-quotemedia/2019-01-22T22;15;53.169516/daily_equities.bcolz/id/data __0.blp
+./data/eod-quotemedia/2019-01-22T22;15;53.169516/daily_equities.bcolz/id/meta sizes
+./data/eod-quotemedia/2019-01-22T22;15;53.169516/daily_equities.bcolz/id/meta storage
+./data/eod-quotemedia/2019-01-22T22;15;53.169516/daily_equities.bcolz/volume __attrs__
+./data/eod-quotemedia/2019-01-22T22;15;53.169516/daily_equities.bcolz/volume/data __7.blp
+./data/eod-quotemedia/2019-01-22T22;15;53.169516/daily_equities.bcolz/volume/data __1.blp
+./data/eod-quotemedia/2019-01-22T22;15;53.169516/daily_equities.bcolz/volume/data __8.blp
+./data/eod-quotemedia/2019-01-22T22;15;53.169516/daily_equities.bcolz/volume/data __5.blp
+./data/eod-quotemedia/2019-01-22T22;15;53.169516/daily_equities.bcolz/volume/data __3.blp
+./data/eod-quotemedia/2019-01-22T22;15;53.169516/daily_equities.bcolz/volume/data __2.blp
+./data/eod-quotemedia/2019-01-22T22;15;53.169516/daily_equities.bcolz/volume/data __4.blp
+./data/eod-quotemedia/2019-01-22T22;15;53.169516/daily_equities.bcolz/volume/data __9.blp
+./data/eod-quotemedia/2019-01-22T22;15;53.169516/daily_equities.bcolz/volume/data __6.blp
+./data/eod-quotemedia/2019-01-22T22;15;53.169516/daily_equities.bcolz/volume/data __0.blp
+./data/eod-quotemedia/2019-01-22T22;15;53.169516/daily_equities.bcolz/volume/meta sizes
+./data/eod-quotemedia/2019-01-22T22;15;53.169516/daily_equities.bcolz/volume/meta storage
+./data/eod-quotemedia/2019-01-22T22;15;53.169516/daily_equities.bcolz/day __attrs__
+./data/eod-quotemedia/2019-01-22T22;15;53.169516/daily_equities.bcolz/day/data __7.blp
+./data/eod-quotemedia/2019-01-22T22;15;53.169516/daily_equities.bcolz/day/data __1.blp
+./data/eod-quotemedia/2019-01-22T22;15;53.169516/daily_equities.bcolz/day/data __8.blp
+./data/eod-quotemedia/2019-01-22T22;15;53.169516/daily_equities.bcolz/day/data __5.blp
+./data/eod-quotemedia/2019-01-22T22;15;53.169516/daily_equities.bcolz/day/data __3.blp
+./data/eod-quotemedia/2019-01-22T22;15;53.169516/daily_equities.bcolz/day/data __2.blp
+./data/eod-quotemedia/2019-01-22T22;15;53.169516/daily_equities.bcolz/day/data __4.blp
+./data/eod-quotemedia/2019-01-22T22;15;53.169516/daily_equities.bcolz/day/data __9.blp
+./data/eod-quotemedia/2019-01-22T22;15;53.169516/daily_equities.bcolz/day/data __6.blp
+./data/eod-quotemedia/2019-01-22T22;15;53.169516/daily_equities.bcolz/day/data __0.blp
+./data/eod-quotemedia/2019-01-22T22;15;53.169516/daily_equities.bcolz/day/meta sizes
+./data/eod-quotemedia/2019-01-22T22;15;53.169516/daily_equities.bcolz/day/meta storage
+./data/eod-quotemedia/2019-01-22T22;15;53.169516/daily_equities.bcolz/high __attrs__
+./data/eod-quotemedia/2019-01-22T22;15;53.169516/daily_equities.bcolz/high/data __7.blp
+./data/eod-quotemedia/2019-01-22T22;15;53.169516/daily_equities.bcolz/high/data __1.blp
+./data/eod-quotemedia/2019-01-22T22;15;53.169516/daily_equities.bcolz/high/data __8.blp
+./data/eod-quotemedia/2019-01-22T22;15;53.169516/daily_equities.bcolz/high/data __5.blp
+./data/eod-quotemedia/2019-01-22T22;15;53.169516/daily_equities.bcolz/high/data __3.blp
+./data/eod-quotemedia/2019-01-22T22;15;53.169516/daily_equities.bcolz/high/data __2.blp
+./data/eod-quotemedia/2019-01-22T22;15;53.169516/daily_equities.bcolz/high/data __4.blp
+./data/eod-quotemedia/2019-01-22T22;15;53.169516/daily_equities.bcolz/high/data __9.blp
+./data/eod-quotemedia/2019-01-22T22;15;53.169516/daily_equities.bcolz/high/data __6.blp
+./data/eod-quotemedia/2019-01-22T22;15;53.169516/daily_equities.bcolz/high/data __0.blp
+./data/eod-quotemedia/2019-01-22T22;15;53.169516/daily_equities.bcolz/high/meta sizes
+./data/eod-quotemedia/2019-01-22T22;15;53.169516/daily_equities.bcolz/high/meta storage
+
+2. Modified write to tar file code, and generated a data tar file in working directory
+import os
+import tarfile
+
+def recursive_files(dir_name='.', ignore=None):
+    for dir_name,subdirs,files in os.walk(dir_name):
+        if ignore and os.path.basename(dir_name) in ignore: 
+            continue
+        for file_name in files:
+            if ignore and file_name in ignore:
+                continue
+            yield os.path.join(dir_name, file_name)
+
+def make_tar_file(dir_name='.', tar_file_name='tarfile.tar', ignore=None):
+    tar = tarfile.open(tar_file_name, 'w')
+    for file_name in recursive_files(dir_name, ignore):
+        tar.add(file_name)
+    tar.close()
+
+dir_name = '.'
+tar_file_name = '/home/workspace/term2-proj-data-3.tar'
+ignore = {'.ipynb_checkpoints', '__pycache__', tar_file_name}
+make_tar_file(dir_name, tar_file_name, ignore)
+
+Comment:  This line is very important:
+tar_file_name = '/home/workspace/term2-proj-data-3.tar'
