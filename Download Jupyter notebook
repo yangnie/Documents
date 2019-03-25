@@ -247,3 +247,13 @@ This command creating a file: /home/yangnie/.jupyter/jupyter_notebook_config.py
 
 2. Use gedit to open this file:
 And modify this line to: c.NotebookApp.iopub_data_rate_limit = 1000000000
+
+
+
+Copy the data files to workspace
+================================
+1. !cp -r ../../data/ ../workspace/
+2. !zip -r data.zip data/
+3. download data.zip from workspace directory to local PC
+4. Download your ipynb file 
+
