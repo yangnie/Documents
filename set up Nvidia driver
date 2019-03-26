@@ -38,3 +38,5 @@ To uninstall the NVIDIA Driver, run nvidia-uninstall
 
 Please see CUDA_Installation_Guide_Linux.pdf in /usr/local/cuda-10.1/doc/pdf for detailed information on setting up CUDA.
 Logfile is /var/log/cuda-installer.log
+
+5. Edit  .bashrc file to update new PATH and LD_LIBRARY_PATH value
