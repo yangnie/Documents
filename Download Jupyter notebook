@@ -142,25 +142,31 @@ for root, dirs, files in os.walk("."):
 import os
 import tarfile
 
-def recursive_files(dir_name='.', ignore=None):
+def recursive_files(dir_name='.', ignore=None, filelist=None):
     for dir_name,subdirs,files in os.walk(dir_name):
         if ignore and os.path.basename(dir_name) in ignore: 
             continue
         for file_name in files:
             if ignore and file_name in ignore:
                 continue
-            yield os.path.join(dir_name, file_name)
+            if filelist: 
+                if file_name in filelist:
+                    yield os.path.join(dir_name, file_name)
+            else:
+                yield os.path.join(dir_name, file_name)
 
-def make_tar_file(dir_name='.', tar_file_name='tarfile.tar', ignore=None):
+def make_tar_file(dir_name='.', tar_file_name='tarfile.tar', ignore=None, filelist=None):
     tar = tarfile.open(tar_file_name, 'w')
-    for file_name in recursive_files(dir_name, ignore):
+    for file_name in recursive_files(dir_name, ignore, filelist):
+        print(file_name)
         tar.add(file_name)
     tar.close()
 
 dir_name = '.'
-tar_file_name = '/home/workspace/term2-proj-data-3.tar'
+tar_file_name = '/home/workspace/term2-proj-data-4.tar'
+filelist={'covariance.2008.pickle', 'pandas-frames.2008.pickle'}
 ignore = {'.ipynb_checkpoints', '__pycache__', tar_file_name}
-make_tar_file(dir_name, tar_file_name, ignore)
+make_tar_file(dir_name, tar_file_name, ignore, filelist)
 
 Comment:  This line is very important:
 tar_file_name = '/home/workspace/term2-proj-data-3.tar'
