@@ -196,3 +196,7 @@ display file list:
 from IPython.display import FileLink, FileLinks
 FileLinks('/home/workspace/')
 
+Fixed cvxpy import error
+========================
+Modified requirements.txt file
+changed numpy == from 1.13.3 to 1.16.2
